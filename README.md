@@ -35,3 +35,16 @@ python3 itemBasedCFModel.py --user USER_INDEX
 cd ./implicitFeedback
 python3 ALSModel.py --user USER_INDEX
 ```
+
+* 计算准确率
+
+```
+python3 evaluation.py
+```
+
+* 调整分区数（以基于用户的CF模型为例）
+
+```
+cd ./userBasedCFModel
+python3 userBasedCFModel.py --user USER_INDEX --parr PARTITION
+```
