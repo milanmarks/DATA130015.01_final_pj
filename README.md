@@ -1,48 +1,47 @@
-# distributed_system
+# Distributed System
 Final project for DATA130015.01.
 
-Implement user-based, item-based and ALS for implicit feedback collaborative filtering algorithm by pyspark.
+This project implements user-based, item-based, and ALS (Alternating Least Squares) collaborative filtering algorithms for implicit feedback using PySpark. The code files are organized as follows:
 
-代码文件中，`userBasedCFModel`、`itemBasedCFModel`、`implicitFeedback`文件夹中分别包
-含了对基于用户、基于物品、带权重的 ALS 模型的实现。在 `evaluation.py` 和 `evaluation_for_als.py`
-中分别对基于物品和用户、带权重的 ALS 的准确度进行计算。
+* `userBasedCFModel`, `itemBasedCFModel`, and `implicitFeedback` directories contain the implementations of user-based, item-based, and weighted ALS models, respectively.
+* In `evaluation.py` and `evaluation_for_als.py`, accuracy is computed for item-based and user-based collaborative filtering as well as weighted ALS.
 
-## 用法
+## Usage
 
-为特定用户推荐：
+To make recommendations for a specific user:
 
-* 基于用户
+* User-Based CF
 
-假设为用户序列`USER_INDEX`推荐：
+Assuming you want to recommend for a user with the index `USER_INDEX`:
 
 ```
 cd ./userBasedCFModel
 python3 userBasedCFModel.py --user USER_INDEX
 ```
 
-* 基于物品
+* Item-Based CF
 
-假设为用户序列`USER_INDEX`推荐：
+Assuming you want to recommend for a user with the index `USER_INDEX`:
 
 ```
 cd ./itemBasedCFModel
 python3 itemBasedCFModel.py --user USER_INDEX
 ```
 
-* 带权重的ALS
+* Weighted ALS
 
 ```
 cd ./implicitFeedback
 python3 ALSModel.py --user USER_INDEX
 ```
 
-* 计算准确率
+* Calculate Accuracy
 
 ```
 python3 evaluation.py
 ```
 
-* 调整分区数（以基于用户的CF模型为例）
+* Adjust the Number of Partitions (Using the user-based CF model as an example)
 
 ```
 cd ./userBasedCFModel
